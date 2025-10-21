@@ -59,6 +59,5 @@ jobs:
         run: |
           az deployment group create \
             --resource-group rg-iac-demo-003 \
-            --location westeurope \
             --template-file infra/rg-scope.main.bicep \
             --mode Complete
