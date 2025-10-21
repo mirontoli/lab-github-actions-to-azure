@@ -49,11 +49,11 @@ jobs:
       - name: Verify Azure login
         run: az account show
 
-      - name: Deploy Azure Resource Group
-        run: |
-          az deployment sub create \
-            --location westeurope \
-            --template-file infra/main.bicep 
+      # - name: Deploy Azure Resource Group
+      #   run: |
+      #     az deployment sub create \
+      #       --location westeurope \
+      #       --template-file infra/main.bicep 
 
       # - name: Deploy Azure Resources
       #   run: |
