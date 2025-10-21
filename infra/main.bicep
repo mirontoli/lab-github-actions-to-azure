@@ -25,7 +25,7 @@ module uami 'modules/uami.bicep' = {
     }
 }
 
-module keyvault 'modules/key-vault.bicep' = {
+module vault 'modules/key-vault.bicep' = {
   scope: rg
   params: {
     name: naming.vault
@@ -37,4 +37,5 @@ module roleAssignment 'modules/role-assignment.bicep' = {
   params: {
     naming:naming
   }
+  dependsOn: [ uami, vault ]
 }
