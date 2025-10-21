@@ -9,13 +9,13 @@ var naming object = {
   vault: 'kv-${uniqueResourceGroupId}'
 }
 
-// Create user-assigned managed identity inside the newly created resource group
-module uami 'modules/uami.bicep' = {
-    scope: rg
-    params: {
-        name: naming.uami
-    }
-}
+// // Create user-assigned managed identity inside the newly created resource group
+// module uami 'modules/uami.bicep' = {
+//     scope: rg
+//     params: {
+//         name: naming.uami
+//     }
+// }
 
 module vault 'modules/key-vault.bicep' = {
   scope: rg
