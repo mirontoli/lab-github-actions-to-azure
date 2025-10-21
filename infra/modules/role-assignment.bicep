@@ -13,7 +13,7 @@ resource vault 'Microsoft.KeyVault/vaults@2022-07-01' existing = {
 
 resource secretsOfficerRoleDefinition 'Microsoft.Authorization/roleDefinitions@2022-04-01' existing = {
   name: 'b86a8fe4-44ce-4948-aee5-eccb2c155cd7' // Key Vault Secrets Officer
-  scope: vault
+  scope: subscription()
 }
 
 // resource roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
