@@ -3,15 +3,28 @@ param location string = resourceGroup().location
 param name string
 
 
-resource vault 'Microsoft.KeyVault/vaults@2025-05-01' = {
-  location: location
+// resource vault 'Microsoft.KeyVault/vaults@2025-05-01' = {
+//   location: location
+//   name: name
+//   properties: {
+//     sku: {
+//       name: 'standard'
+//       family: 'A'
+//     }
+//     tenantId: subscription().tenantId
+//     enableRbacAuthorization: true
+//   }
+// }
+
+resource vault 'Microsoft.KeyVault/vaults@2022-07-01' = {
   name: name
+  location: location
   properties: {
+    tenantId: tenant().tenantId
     sku: {
-      name: 'standard'
       family: 'A'
+      name: 'standard'
     }
-    tenantId: subscription().tenantId
     enableRbacAuthorization: true
   }
 }
