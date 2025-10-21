@@ -23,6 +23,15 @@ az rest --method GET \
 
 az role assignment create --assignee $appId --role "Contributor" --scope /subscriptions/$subscriptionId
 
+az role assignment create --assignee $appId --role "User Access Administrator" --scope /subscriptions/$subscriptionId
+
+az role assignment list --assignee $appId --scope /subscriptions/$subscriptionId --query "[].roleDefinitionName" -o tsv
+
+az role assignment delete --assignee $appId --role "User Access Administrator" --scope /subscriptions/$subscriptionId
+
+# Lowering the permissions
+az role assignment create --assignee $appId --role "Role Based Access Control Administrator" --scope /subscriptions/$subscriptionId
+
 # Create environment: DEV
 
 # Add environment secrets: 
