@@ -36,4 +36,17 @@ az role assignment create --assignee $appId --role "Role Based Access Control Ad
 
 # Add environment secrets: 
 # AZURE_CLIENT_ID, AZURE_TENANT_ID, AZURE_SUBSCRIPTION_ID
+
+
+```
+
+cleanup
+
+```bash
+az stack sub list --query "[].name" -o tsv
+az stack sub delete --name stack-role-assignment --action-on-unmanage deleteAll --yes
+az group list --query "[].name" -o tsv
+az group delete --name rg-iac-demo-003 --yes
+az group delete --name rg-iac-demo-002 --yes
+az group delete --name rg-iac-demo --yes
 ```

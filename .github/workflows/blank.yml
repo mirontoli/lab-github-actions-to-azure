@@ -62,11 +62,11 @@ jobs:
       #       --template-file infra/rg-scope.main.bicep \
       #       --mode Complete
 
-      - name: Deploy a Deployment Stack
-        run: |
-          az stack sub create \
-            --template-file infra/main.bicep \
-            --name stack-role-assignment \
-            --location westeurope \
-            --action-on-unmanage deleteResources \
-            --deny-settings-mode None
+      # - name: Deploy a Deployment Stack
+      #   run: |
+      #     az stack sub create \
+      #       --template-file infra/main.bicep \
+      #       --name stack-role-assignment \
+      #       --location westeurope \
+      #       --action-on-unmanage deleteResources \
+      #       --deny-settings-mode None
