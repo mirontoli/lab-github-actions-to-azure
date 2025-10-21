@@ -32,10 +32,10 @@ module vault 'modules/key-vault.bicep' = {
   }
 }
 
-module roleAssignment 'modules/role-assignment.bicep' = {
-  scope: rg
-  params: {
-    naming:naming
-  }
-  dependsOn: [ uami, vault ]
-}
+// module roleAssignment 'modules/role-assignment.bicep' = {
+//   scope: rg
+//   params: {
+//     naming:naming
+//   }
+//   dependsOn: [ uami, vault ]
+// }
