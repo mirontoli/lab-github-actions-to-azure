@@ -49,15 +49,15 @@ jobs:
       - name: Verify Azure login
         run: az account show
 
-      # - name: Deploy Azure Resource Group
-      #   run: |
-      #     az deployment sub create \
-      #       --location westeurope \
-      #       --template-file infra/main.bicep 
-
-      - name: Deploy Azure Resources
+      - name: Deploy Azure Resource Group
         run: |
-          az deployment group create \
-            --resource-group rg-iac-demo-003 \
-            --template-file infra/rg-scope.main.bicep \
-            --mode Complete
+          az deployment sub create \
+            --location westeurope \
+            --template-file infra/main.bicep 
+
+      # - name: Deploy Azure Resources
+      #   run: |
+      #     az deployment group create \
+      #       --resource-group rg-iac-demo-003 \
+      #       --template-file infra/rg-scope.main.bicep \
+      #       --mode Complete
