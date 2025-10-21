@@ -3,7 +3,7 @@ targetScope = 'subscription'
 param appName string = 'iac-demo'
 param location string = 'westeurope'
 
-var resourceGroupName = 'rg-${appName}'
+var resourceGroupName = 'rg-${appName}-002'
 
 resource rg 'Microsoft.Resources/resourceGroups@2024-11-01' = {
   name: resourceGroupName
