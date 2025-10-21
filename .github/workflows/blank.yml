@@ -51,10 +51,11 @@ jobs:
 
       - name: Deploy Azure Resource Group
         run: |
+          az --version
           az deployment sub create \
             --location westeurope \
             --template-file infra/main.bicep \
-            --verbose
+            --debug
 
       # # Runs a single command using the runners shell
       # - name: Run a one-line script
