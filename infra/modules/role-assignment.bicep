@@ -21,7 +21,8 @@ resource roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
   scope: vault
   properties: {
     roleDefinitionId: secretsOfficerRoleDefinition.id
-    principalId: uami.properties.principalId
+    principalId: reference(resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', naming.uami), '2018-11-30').properties.principalId
+    //principalId: uami.properties.principalId
     principalType: 'ServicePrincipal'
   }
 }
