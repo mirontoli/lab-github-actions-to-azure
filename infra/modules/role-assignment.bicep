@@ -16,12 +16,12 @@ resource secretsOfficerRoleDefinition 'Microsoft.Authorization/roleDefinitions@2
   scope: vault
 }
 
-resource roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  name: guid(vault.id, uami.id, secretsOfficerRoleDefinition.id)
-  scope: vault
-  properties: {
-    roleDefinitionId: secretsOfficerRoleDefinition.id
-    principalId: uami.properties.principalId
-    principalType: 'ServicePrincipal'
-  }
-}
+// resource roleAssignment 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
+//   name: guid(vault.id, uami.id, secretsOfficerRoleDefinition.id)
+//   scope: vault
+//   properties: {
+//     roleDefinitionId: secretsOfficerRoleDefinition.id
+//     principalId: uami.properties.principalId
+//     principalType: 'ServicePrincipal'
+//   }
+// }
