@@ -6,7 +6,8 @@ param naming object
 resource uami 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31'  existing = {
   name: naming.uami
 }
-resource vault 'Microsoft.KeyVault/vaults@2025-05-01' existing = {
+
+resource vault 'Microsoft.KeyVault/vaults@2022-07-01' existing = {
   name: naming.vault
 }
 
